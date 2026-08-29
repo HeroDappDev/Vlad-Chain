@@ -101,43 +101,20 @@ function renderCleanASCII(asciiText: string): JSX.Element {
   return <pre className="ascii-logo" style={{ margin: 0 }}>{chars}</pre>;
 }
 
-// ASCII Art for VLADCHAIN with animation frames
-// Optimized frames for smoother, faster animation
-const VLADCHAIN_ASCII_FRAMES = [
-    // Frame 0: Clean logo - exact original
-    `██╗   ██╗██╗      █████╗ ██████╗  ██████╗██╗  ██╗ █████╗ ██╗███╗   ██╗
-██║   ██║██║     ██╔══██╗██╔══██╗██╔════╝██║  ██║██╔══██╗██║████╗  ██║
-██║   ██║██║     ███████║██║  ██║██║     ███████║███████║██║██╔██╗ ██║
-╚██╗ ██╔╝██║     ██╔══██║██║  ██║██║     ██╔══██║██╔══██║██║██║╚██╗██║
- ╚████╔╝ ███████╗██║  ██║██████╔╝╚██████╗██║  ██║██║  ██║██║██║ ╚████║
-  ╚═══╝  ╚══════╝╚═╝  ╚═╝╚═════╝  ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝`,
-    
-    // Frame 1: Light glitch
-    createGlitchFrame(`██╗   ██╗██╗      █████╗ ██████╗  ██████╗██╗  ██╗ █████╗ ██╗███╗   ██╗
-██║   ██║██║     ██╔══██╗██╔══██╗██╔════╝██║  ██║██╔══██╗██║████╗  ██║
-██║   ██║██║     ███████║██║  ██║██║     ███████║███████║██║██╔██╗ ██║
-╚██╗ ██╔╝██║     ██╔══██║██║  ██║██║     ██╔══██║██╔══██║██║██║╚██╗██║
- ╚████╔╝ ███████╗██║  ██║██████╔╝╚██████╗██║  ██║██║  ██║██║██║ ╚████║
-  ╚═══╝  ╚══════╝╚═╝  ╚═╝╚═════╝  ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝`, 2),
-    
-    // Frame 2: Moderate glitch
-    createGlitchFrame(`██╗   ██╗██╗      █████╗ ██████╗  ██████╗██╗  ██╗ █████╗ ██╗███╗   ██╗
-██║   ██║██║     ██╔══██╗██╔══██╗██╔════╝██║  ██║██╔══██╗██║████╗  ██║
-██║   ██║██║     ███████║██║  ██║██║     ███████║███████║██║██╔██╗ ██║
-╚██╗ ██╔╝██║     ██╔══██║██║  ██║██║     ██╔══██║██╔══██║██║██║╚██╗██║
- ╚████╔╝ ███████╗██║  ██║██████╔╝╚██████╗██║  ██║██║  ██║██║██║ ╚████║
-  ╚═══╝  ╚══════╝╚═╝  ╚═╝╚═════╝  ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝`, 4),
-    
-    // Frame 3: Heavy glitch
-    createGlitchFrame(`██╗   ██╗██╗      █████╗ ██████╗  ██████╗██╗  ██╗ █████╗ ██╗███╗   ██╗
-██║   ██║██║     ██╔══██╗██╔══██╗██╔════╝██║  ██║██╔══██╗██║████╗  ██║
-██║   ██║██║     ███████║██║  ██║██║     ███████║███████║██║██╔██╗ ██║
-╚██╗ ██╔╝██║     ██╔══██║██║  ██║██║     ██╔══██║██╔══██║██║██║╚██╗██║
- ╚████╔╝ ███████╗██║  ██║██████╔╝╚██████╗██║  ██║██║  ██║██║██║ ╚████║
-  ╚═══╝  ╚══════╝╚═╝  ╚═╝╚═════╝  ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝`, 6),
-    
+// ASCII Art for VLAD CHAIN with a clear word break and animated glitch frames
+const VLAD_CHAIN_ASCII = `██╗   ██╗██╗      █████╗ ██████╗      ██████╗██╗  ██╗ █████╗ ██╗███╗   ██╗
+██║   ██║██║     ██╔══██╗██╔══██╗    ██╔════╝██║  ██║██╔══██╗██║████╗  ██║
+██║   ██║██║     ███████║██║  ██║    ██║     ███████║███████║██║██╔██╗ ██║
+╚██╗ ██╔╝██║     ██╔══██║██║  ██║    ██║     ██╔══██║██╔══██║██║██║╚██╗██║
+ ╚████╔╝ ███████╗██║  ██║██████╔╝    ╚██████╗██║  ██║██║  ██║██║██║ ╚████║
+  ╚═══╝  ╚══════╝╚═╝  ╚═╝╚═════╝      ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝`;
 
-  ];
+const VLADCHAIN_ASCII_FRAMES = [
+  VLAD_CHAIN_ASCII,
+  createGlitchFrame(VLAD_CHAIN_ASCII, 2),
+  createGlitchFrame(VLAD_CHAIN_ASCII, 4),
+  createGlitchFrame(VLAD_CHAIN_ASCII, 6),
+];
 
 // Keep the original for fallback
 const VLADCHAIN_ASCII = VLADCHAIN_ASCII_FRAMES[0];
@@ -821,7 +798,7 @@ You can also chat naturally about blockchain activities, slots, transactions, an
               )}
               <div
                 onClick={() => {
-                  navigator.clipboard.writeText('0xf0de8f7063b66d2345d88898a0297c702fec2d3c');
+                  navigator.clipboard.writeText('COMING SOON');
                   setCaCopied(true);
                   setTimeout(() => setCaCopied(false), 1500);
                 }}
@@ -836,7 +813,7 @@ You can also chat naturally about blockchain activities, slots, transactions, an
                   cursor: 'pointer'
                 }}
               >
-                CA: 0xf0de8f7063b66d2345d88898a0297c702fec2d3c
+                CA: COMING SOON
                 {caCopied && <span style={{ marginLeft: '8px', color: '#7CFC00' }}>✓ Copied!</span>}
               </div>
               {/* Commands and Warning Section - Side by Side */}
