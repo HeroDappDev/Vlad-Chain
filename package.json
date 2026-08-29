@@ -48,19 +48,16 @@
     "nodejs"
   ],
   "author": {
-    "name": "VladChain Team",
-    "email": "team@vladchain.ai",
-    "url": "https://vladchain.ai"
+    "name": "VladChain Team"
   },
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/your-username/vladchain.git"
+    "url": "https://github.com/HeroDappDev/Vlad-Chain.git"
   },
   "bugs": {
-    "url": "https://github.com/your-username/vladchain/issues"
+    "url": "https://github.com/HeroDappDev/Vlad-Chain/issues"
   },
-  "homepage": "https://vladchain.ai",
   "engines": {
     "node": ">=18.0.0",
     "npm": ">=8.0.0"
